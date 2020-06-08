@@ -1,0 +1,68 @@
+@import './../../../variables.scss';
+
+.recipe-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-options {
+  position: relative;
+
+  .dropdown-toggle {
+    position: relative;
+    padding: 5px;
+    right: -1rem;
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      content: '\2807';
+      font-size: 28px;
+    }
+
+    &.active {
+      color: $pink;
+      ;
+    }
+  }
+
+  .dropdown-menu {
+    top: 95%;
+    min-width: 9rem;
+  }
+}
+
+.heading {
+  text-align: center;
+  font-size: $small;
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+.content {
+  font-family: 'Playfair Display', serif;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.steps {
+  line-height: 1.8rem;
+}
+
+.img-bcg {
+  background-position: 0 -300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+@media (max-width: 991px) {
+  .img-bcg {
+    background-position: 0 -220px;
+    height: 250px;
+  }
+}

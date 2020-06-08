@@ -1,0 +1,40 @@
+<div class="pt-4 px-3">
+  <div class="row mb-3">
+    <div class="col-12 img-bcg px-2" [ngStyle]="{backgroundImage: 'url(' + recipe.imgUrl + ')'}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 recipe-title pr-0 py-2">
+      <h1>{{ recipe.name }}</h1>
+      <div class="dropdown-options">
+        <a class="dropdown-toggle" role="button" (click)="toggleDropdown()" [ngClass]="{'active': isOpen}"></a>
+        <ul class=" dropdown-menu dropdown-menu-right" [ngClass]="{'show': isOpen}">
+          <li><a (click)="addToList()">to shopping list</a></li>
+          <li><a (click)="editRecipe()">edit</a></li>
+          <li><a (click)="deleteRecipe()">delete</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12 content">
+      {{ recipe.description }} {{ recipe.instructions }}
+    </div>
+  </div>
+  <h4 class="heading py-2">Ingredients</h4>
+  <div class="row mb-3">
+    <div class="col-12 content">
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">
+          {{ingredient.name}} - {{ingredient.amount}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h4 class="heading py-2">Steps</h4>
+  <div class="row mb-3">
+    <div class="col-12 content steps">
+      {{ recipe.instructions }}
+    </div>
+  </div>
+</div>

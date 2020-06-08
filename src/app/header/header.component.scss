@@ -1,0 +1,72 @@
+@import './../../variables.scss';
+
+.navbar-nav {
+  flex-direction: row;
+
+  a {
+    color: $black;
+    font-size: $medium;
+    font-family: 'Tenor Sans', sans-serif;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  li.tab {
+    transition: all .1s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.user-tab,
+.auth-tab {
+  color: $pink;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+.dropdown-settings {
+  display: inline-flex;
+  align-items: center;
+}
+
+a.navbar-brand {
+  font-size: $large;
+  color: $black;
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+.active {
+  a {
+    color: $pink;
+  }
+}
+
+.dropdown-toggle {
+  position: relative;
+  padding: 5px;
+
+  &::after {
+    display: none;
+  }
+
+  &::before {
+    content: '\2807';
+    font-size: 28px;
+  }
+
+  &.active {
+    color: $pink;
+    ;
+  }
+}
+
+.dropdown-menu {
+  top: 72%;
+  min-width: 6rem;
+  margin-right: 2rem;
+}

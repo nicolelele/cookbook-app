@@ -1,0 +1,47 @@
+@import '../../variables.scss';
+
+.list-img {
+  display: flex;
+  justify-content: center;
+
+  img {
+    position: sticky;
+    top: 0%;
+  }
+}
+
+ul {
+  height: max-content;
+  position: relative;
+  background-color: $white;
+  color: $gray;
+  width: 100%;
+  border: 1px solid $light-gray;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid $salmon;
+    border-right: 1px solid $salmon;
+    width: 2px;
+    height: 100%;
+    left: 40px;
+  }
+
+  li {
+    font-family: 'Sacramento', cursive;
+    font-size: $large;
+    text-transform: lowercase;
+    list-style: none;
+    border-bottom: 1px dotted $light-gray;
+    text-indent: 25px;
+    height: auto;
+    transition: all 0.2s;
+    padding-left: $large;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $beige;
+    }
+  }
+}

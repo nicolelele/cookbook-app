@@ -1,0 +1,77 @@
+<div class="row pt-5 pb-5">
+  <div class="col-12">
+    <form [formGroup]="recipeForm" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-add mr-2" type="submit"
+            [disabled]="!recipeForm.valid">{{ this.editMode ? 'Update' : 'Save' }}</button>
+          <button class="btn btn-delete mr-2" type="button" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" id="name" formControlName="name" class="form-control"
+              placeholder="Vegan Raspberry Donuts">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="name">Image url</label>
+            <input type="text" id="imgUrl" #imagePath formControlName="imgUrl" class="form-control"
+              placeholder="../../../assets/img/pink-donuts.jpg or external link">
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-12 img-preview" *ngIf="imagePath.value">
+          <img [src]="imagePath.value">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="name" class="label-textarea">Description</label>
+            <textarea type="text" id="description" formControlName="description" class="form-control text-lines"
+              rows="3" placeholder="Soft & fluffy raspberry donuts with a pretty pink icing, so delicious!"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12" formArrayName="ingredients">
+          <label for="ingredients">Ingredients</label>
+          <div class="row" *ngFor="let ingredientCtrl of controls; let i = index" [formGroupName]="i">
+            <div class="col-7 mb-1">
+              <input type="text" id="name" class="form-control" formControlName="name" placeholder="raspberries">
+            </div>
+            <div class="col-4">
+              <input type="text" id="amount" formControlName="amount" class="form-control" placeholder="2 cups">
+            </div>
+            <div class="col-1">
+              <button class="btn btn-x" type="button"><i class="material-icons" (click)="deleteIngredient(i)">clear</i>
+              </button>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-12">
+              <button class="btn btn-add" type="button" (click)="addNewIngredient()">add new</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="instructions" class="label-textarea">Steps</label>
+            <textarea type="text" id="instructions" formControlName="instructions" class="form-control text-lines"
+              rows=8
+              placeholder="BLEND DRY INGREDIENTS FIRST! See how all of our ingredients make this pink flour to use in our donuts?! SO fun! MAKE THE RASPBERRY PUREE - will be used both in the donut and in the glaze."></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

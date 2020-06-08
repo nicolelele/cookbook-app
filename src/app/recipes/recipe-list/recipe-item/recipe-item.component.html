@@ -1,0 +1,11 @@
+<a class="list-group-item recipe clearfix mb-2" [routerLink]="[id]" routerLinkActive="activeTab">
+  <div class="row">
+    <div class="col-9 pr-1">
+      <h5 class="list-group-item-heading">{{recipe.name}}</h5>
+      <p class="list-group-item-text">{{recipe.description}}</p>
+    </div>
+    <div class="col-3 pl-0">
+      <span class="pull-right"><img class="img-responsive" [src]="recipe.imgUrl" alt="{{recipe.name}}"></span>
+    </div>
+  </div>
+</a>
