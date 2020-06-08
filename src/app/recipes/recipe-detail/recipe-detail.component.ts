@@ -13,6 +13,7 @@ export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe;
   isOpen = false;
   id: number;
+  addButton: string = 'to shopping list';
 
   constructor(private recipeService: RecipeService, private elRef: ElementRef, private route: ActivatedRoute, private router: Router) { }
 
@@ -31,6 +32,11 @@ export class RecipeDetailComponent implements OnInit {
 
   addToList() {
     this.recipeService.addToShoppingList(this.recipe.ingredients);
+    this.addButton = 'added!';
+    setTimeout(() => {
+      this.addButton = 'to shopping list';
+      this.isOpen = false;
+    }, 500);
   }
 
   editRecipe() {

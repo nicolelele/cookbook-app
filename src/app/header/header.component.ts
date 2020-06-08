@@ -48,6 +48,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logout() {
     this.authenticated = false;
     this.authService.logout();
+    this.isOpen = false;
   }
 
   @HostListener('document:click', ['$event']) toggle(event: Event) {

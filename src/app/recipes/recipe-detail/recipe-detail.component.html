@@ -9,7 +9,7 @@
       <div class="dropdown-options">
         <a class="dropdown-toggle" role="button" (click)="toggleDropdown()" [ngClass]="{'active': isOpen}"></a>
         <ul class=" dropdown-menu dropdown-menu-right" [ngClass]="{'show': isOpen}">
-          <li><a (click)="addToList()">to shopping list</a></li>
+          <li><a (click)="addToList()">{{ addButton }}</a></li>
           <li><a (click)="editRecipe()">edit</a></li>
           <li><a (click)="deleteRecipe()">delete</a></li>
         </ul>
