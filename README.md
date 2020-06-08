@@ -1,5 +1,7 @@
 demo: https://cookbook-app-fe7aa.web.app
 
+credentials: test@test.com test123
+
 
 # CookbookApp
 
